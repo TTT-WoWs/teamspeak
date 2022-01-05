@@ -59,6 +59,8 @@ cd terraform
 terraform destroy
 ```
 
+You will need to manually remove the data volume in the web interface of Hetzner Cloud.
+
 ## TODO
 
 Automated backups!
