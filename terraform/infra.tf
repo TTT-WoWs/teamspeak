@@ -11,13 +11,21 @@ resource "hcloud_server" "teamspeak" {
   location    = var.hetzner_default_location
   server_type = var.hetzner_default_server_type
   ssh_keys    = data.hcloud_ssh_keys.all_keys.ssh_keys.*.name
+  labels      = {
+    "runtime" = "docker"
+    "service" = "teamspeak"
+  }
 }
 
 resource "hcloud_volume" "teamspeak_data" {
-  name              = "teamspeakdata1"
-  size              = var.volume_teamspeak_data1_size
+  name              = "teamspeak_data"
+  location          = var.hetzner_default_location
+  size              = var.volume_teamspeak_data_size
   format            = "ext4"
   delete_protection = true
+  labels            = {
+    "service"       = "teamspeak"
+  }
 }
 
 resource "hcloud_volume_attachment" "teamspeak_data_mount" {

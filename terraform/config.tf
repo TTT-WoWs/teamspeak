@@ -1,5 +1,5 @@
 # User configuration
-variable "volume_teamspeak_data1_size" {
+variable "volume_teamspeak_data_size" {
   default   = 10 # GB, 10 is the minimum
 }
 
