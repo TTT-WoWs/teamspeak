@@ -44,11 +44,16 @@ In the case of the following error:
 
 `Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!`
 
+Either
+
+a) someone has probably gained access to the server, in which case, call in some help! Unless you're a Linux admin, in which case I trust your judgement.
+b) you just did a re-deploy and the cloud provider has given the new machine the same IP address, in which case you can safely proceed with the following:
+
 You must first find the IP address of the host:
 
 `ansible-inventory --host teamspeak`
 
-Then run `ssh-keygen -R <ip-address>`
+Then run `ssh-keygen -R <ip-address>`. After this, you can retry whatever you were doing.
 
 ## Removing
 
