@@ -1,0 +1,18 @@
+---
+
+- hosts: localhost
+  tasks:
+    - name: get hcloud volume for teamspeak
+      hcloud_volume_info:
+        name: teamspeak_data
+      register: hcloud_teamspeak_volume
+
+#- hosts: tag_runtime_docker
+#  roles:
+#    - geerlingguy.pip
+#    - geerlingguy.docker
+
+- hosts: tag_service_teamspeak
+  roles:
+    - teamspeak3
+

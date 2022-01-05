@@ -1,0 +1,42 @@
+---
+
+- name: ensure teamspeak base directory exists
+  file:
+    path: "{{ teamspeak_data_directory }}"
+    mode: 0700
+    state: directory
+
+- name: ensure teamspeak data directory exists
+  file:
+    path: "{{ teamspeak_data_directory }}/data"
+    mode: 0700
+    owner: 9987
+    group: 9987
+    state: directory
+
+- name: ensure teamspeak image exists
+  docker_image:
+    name: teamspeak
+    source: pull
+    tag: "{{ teamspeak_version }}"
+
+- name: run teamspeak container
+  docker_container:
+    name: "{{ teamspeak_name }}"
+    image: "teamspeak:{{ teamspeak_version }}"
+    env:
+      TS3SERVER_LICENSE: accept
+      TS3SERVER_QUERY_PROTOCOLS: raw,ssh
+      TS3SERVER_DB_CLIENTKEEPDAYS: "90"
+    ports:
+      - "9987:9987/udp"           # voice
+      - "127.0.0.1:10011:10011"   # server query for telnet
+      - "10022:10022"             # server query over SSH
+      - "30033:30033"             # file transfer
+    volumes:
+      - "{{ teamspeak_data_directory }}/data:/var/ts3server"
+    container_default_behavior: no_defaults
+    recreate: true
+    restart_policy: on-failure
+    restart_retries: 5
+

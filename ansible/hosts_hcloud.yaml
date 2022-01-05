@@ -1,0 +1,9 @@
+plugin: hcloud
+keyed_groups:
+  - key: location
+    prefix: hcloud_location
+  - key: labels
+    prefix: tag
+  - key: image_os_flavor
+    prefix: distro
+

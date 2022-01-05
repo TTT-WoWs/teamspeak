@@ -1,0 +1,7 @@
+---
+# vars file for teamspeak3
+
+teamspeak_version: 3.13
+teamspeak_data_directory: "/mnt/HC_Volume_{{ hostvars['localhost']['hcloud_teamspeak_volume']['hcloud_volume_info'][0]['id'] }}/teamspeak_data"
+teamspeak_backup_frequency: 24  # in hours
+

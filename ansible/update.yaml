@@ -1,0 +1,8 @@
+---
+
+# Simple playbook to update all Linux hosts
+
+- hosts: all
+  roles:
+    - robertdebock.update
+

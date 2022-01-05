@@ -1,0 +1,10 @@
+roles:
+  - name: geerlingguy.docker
+  - name: geerlingguy.pip
+  - name: robertdebock.update
+
+collections:
+  - name: community.general
+  - name: community.docker
+  - name: hetzner.hcloud
+

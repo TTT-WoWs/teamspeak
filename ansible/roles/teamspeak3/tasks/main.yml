@@ -1,0 +1,15 @@
+---
+# tasks file for teamspeak3
+
+- name: configure teamspeak
+  include_tasks: teamspeak.yaml
+  tags:
+    - teamspeak
+    - application
+
+- name: configure backups
+  include_tasks: backup.yaml
+  tags:
+    - teamspeak
+    - backup
+
