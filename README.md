@@ -22,7 +22,7 @@
 1. `terraform init` (or `terraform init -upgrade` for updating modules)
 1. `terraform apply`, then type 'yes' (aka: follow instructions)
 1. `cd ..`, then `cd ansible`
-1. `python -m pip install -r requirements.txt`
+1. `python -m pip install --user -r requirements.txt` or (preferred) use `pipenv`/`virtualenv`
 1. `ansible-galaxy install -r requirements.yaml`
 1. `ansible-playbook update.yaml`
 1. `ansible-playbook play.yaml`
