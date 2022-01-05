@@ -1,3 +1,9 @@
+# Preface
+
+This repository is for easily running and managing TeamSpeak on Hetzner Cloud.
+
+Made for the World of Warships clan Tora Tora Tora! for fun and science.
+
 # Prerequisites
 
 - An account at [Hetzner Cloud](https://console.hetzner.cloud/)
@@ -22,7 +28,7 @@
 1. `terraform init` (or `terraform init -upgrade` for updating modules)
 1. `terraform apply`, then type 'yes' (aka: follow instructions)
 1. `cd ..`, then `cd ansible`
-1. `python -m pip install --user -r requirements.txt` or (preferred) use `pipenv`/`virtualenv`
+1. `python -m pip install --user -r requirements.txt` or (preferred) use a `pipenv`/`virtualenv` and `pip install -r requirements.txt` directly
 1. `ansible-galaxy install -r requirements.yaml`
 1. `ansible-playbook update.yaml`
 1. `ansible-playbook play.yaml`
