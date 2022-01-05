@@ -5,6 +5,7 @@
   - A Project, or access to an existing project
   - Your SSH key added to said project
   - An API token created for said project (this is `HCLOUD_TOKEN` during execution)
+    - **Save it somewhere!** I use [direnv](https://direnv.net) and have a `.envrc` with the token in the root of this project.
 - [Python](https://www.python.org/downloads/)
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html)
 - [Terraform](https://www.terraform.io/downloads)
