@@ -16,7 +16,7 @@
 
 1. Create the `HCLOUD_TOKEN` variable
    - `export HCLOUD_TOKEN=<your_token>` on Linux/Mac, or
-   - `Set-Variable -Name "HCLOUD_TOKEN" -Value ">your_token>" on Windows with PowerShell
+   - `Set-Variable -Name "HCLOUD_TOKEN" -Value "<your_token>"` on Windows with PowerShell
 1. `cd terraform`
 1. `terraform init` (or `terraform init -upgrade` for updating modules)
 1. `terraform apply`, then type 'yes' (aka: follow instructions)
