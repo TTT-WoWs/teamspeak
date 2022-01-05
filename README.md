@@ -1,6 +1,6 @@
 # Preface
 
-This repository is for easily running and managing TeamSpeak on Hetzner Cloud.
+This repository is for easily running and managing an affordable TeamSpeak server on Hetzner Cloud.
 
 Made for the World of Warships clan Tora Tora Tora! for fun and science.
 
@@ -30,7 +30,36 @@ Made for the World of Warships clan Tora Tora Tora! for fun and science.
 1. `cd ..`, then `cd ansible`
 1. `python -m pip install --user -r requirements.txt` or (preferred) use a `pipenv`/`virtualenv` and `pip install -r requirements.txt` directly
 1. `ansible-galaxy install -r requirements.yaml`
-1. `ansible-playbook update.yaml`
+1. `ansible-playbook update.yaml`, it is possible you have to type "yes" here
 1. `ansible-playbook play.yaml`
 1. Done!
+
+# Other
+
+## Troubleshooting
+
+### Failed to connect to the host via ssh
+
+In the case of the following error:
+
+`Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!`
+
+You must first find the IP address of the host:
+
+`ansible-inventory --host teamspeak`
+
+Then run `ssh-keygen -R <ip-address>`
+
+## Removing
+
+You can safely remove the VM without immediately losing data:
+
+```sh
+cd terraform
+terraform destroy
+```
+
+## TODO
+
+Automated backups!
 

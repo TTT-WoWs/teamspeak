@@ -7,10 +7,10 @@
         name: teamspeak_data
       register: hcloud_teamspeak_volume
 
-#- hosts: tag_runtime_docker
-#  roles:
-#    - geerlingguy.pip
-#    - geerlingguy.docker
+- hosts: tag_runtime_docker
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
 
 - hosts: tag_service_teamspeak
   roles:
