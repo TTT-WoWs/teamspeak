@@ -2,4 +2,8 @@
 # defaults file for teamspeak3
 
 teamspeak_name: teamspeak3
+teamspeak_username: teamspeak
+teamspeak_groupname: teamspeak
+teamspeak_uid: 9987
+teamspeak_gid: 9987
 

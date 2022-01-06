@@ -1,17 +1,32 @@
 ---
 
+- name: ensure teamspeak group exists
+  group:
+    name: "{{ teamspeak_groupname }}"
+    gid: "{{ teamspeak_gid }}"
+    system: true
+
+- name: ensure teamspeak user exists
+  user:
+    name: "{{ teamspeak_username }}"
+    uid: "{{ teamspeak_uid }}"
+    group: "{{ teamspeak_groupname }}"
+    system: true
+
 - name: ensure teamspeak base directory exists
   file:
     path: "{{ teamspeak_data_directory }}"
-    mode: 0700
+    mode: 0750
+    owner: root
+    group: "{{ teamspeak_groupname }}"
     state: directory
 
 - name: ensure teamspeak data directory exists
   file:
     path: "{{ teamspeak_data_directory }}/data"
     mode: 0700
-    owner: 9987
-    group: 9987
+    owner: "{{ teamspeak_username }}"
+    group: "{{ teamspeak_groupname }}"
     state: directory
 
 - name: ensure teamspeak image exists
@@ -33,6 +48,7 @@
       - "127.0.0.1:10011:10011"   # server query for telnet
       - "10022:10022"             # server query over SSH
       - "30033:30033"             # file transfer
+    user: "{{ teamspeak_username }}:{{ teamspeak_groupname }}"
     volumes:
       - "{{ teamspeak_data_directory }}/data:/var/ts3server"
     container_default_behavior: no_defaults
