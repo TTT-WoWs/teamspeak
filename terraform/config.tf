@@ -28,10 +28,10 @@ terraform {
       source = "hetznercloud/hcloud"
       version = "1.32.2"
     }
-    gandi = {
-      version = "2.0.0-rc3"
-      source = "github/go-gandi/gandi"
-    }
+#    gandi = {
+#      version = "2.0.0-rc3"
+#      source = "github/go-gandi/gandi"
+#    }
   }
 }
 

@@ -1,3 +1,15 @@
 ---
 
+# TODO:
+# - Copy files, namely:
+#   - licensekey.dat (if present)
+#   - query_ip_allowlist.txt
+#   - query_ip_denylist.txt
+#   - serverkey.dat (if present)
+#   - ts3server.sqlitedb (sqlite3 .backup command preferred)
+#   - files folder
+#   - logs folder (not essential)
+# ... could just copy the entire folder
+#
+# - Incremental backups?
 
